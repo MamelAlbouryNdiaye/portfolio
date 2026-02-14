@@ -1,0 +1,87 @@
+.skills-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+  padding: 60px 40px;
+  perspective: 2000px;
+}
+
+.skills-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.deck {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 220px;
+  height: 300px;
+  perspective: 1200px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.card.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg) rotateZ(3deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.8);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-front {
+  background: linear-gradient(135deg, #1e293b, #020617);
+  transition: background 0.3s;
+}
+
+.card-front:hover {
+  background: linear-gradient(135deg, #7c3aed, #4c1d95);
+}
+
+.card-back {
+  background: linear-gradient(135deg, #7c3aed, #4c1d95);
+  transform: rotateY(180deg);
+}
+
+.card-front h2 {
+  margin-top: 20px;
+}
+
+.icon {
+  font-size: 4rem;
+  transition: transform 0.3s;
+}
+
+.card:hover .icon {
+  transform: scale(1.2) rotate(10deg);
+}

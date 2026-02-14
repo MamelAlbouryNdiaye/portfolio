@@ -1,0 +1,33 @@
+.contact-page {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.contact-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background: #111;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-item {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+}
+
+.contact-item a {
+  color: #00d8ff;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}

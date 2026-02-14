@@ -1,0 +1,98 @@
+.project-flip-card {
+  perspective: 1200px;
+}
+
+.project-flip-inner {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.project-flip-card.flipped .project-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT & BACK */
+.project-front,
+.project-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: linear-gradient(145deg, #151523, #0d0d18);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* FRONT */
+.project-front h2 {
+  color: #caa24d;
+  margin-bottom: 16px;
+}
+
+.project-front img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.project-front p {
+  margin-bottom: 16px;
+}
+
+.project-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.project-actions a,
+.project-actions button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #caa24d;
+  color: #0b0b12;
+  text-decoration: none;
+}
+
+/* BACK */
+.project-back {
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.project-back h3 {
+  margin-bottom: 16px;
+}
+
+.tech-list {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tech-list span {
+  border: 1px solid #caa24d;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #caa24d;
+}
+
+.close-btn {
+  margin-top: 20px;
+  background: none;
+  border: 1px solid #caa24d;
+  color: #caa24d;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}

@@ -1,0 +1,116 @@
+.nav-deck {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  perspective: 1600px;
+}
+
+/* Wrapper (animation distribution) */
+.nav-card-wrapper {
+  width: 200px;
+  height: 280px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  animation: deal 0.8s ease forwards;
+  cursor: pointer;
+}
+
+/* Carte */
+.nav-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* FLIP */
+.nav-card-wrapper:hover .nav-card {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+/* Faces */
+.nav-card-front,
+.nav-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+
+  /* texture papier */
+  background-image:
+    linear-gradient(transparent 96%, rgba(0,0,0,0.05) 97%),
+    radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent);
+}
+
+/* BACK */
+.nav-card-back {
+  transform: rotateY(180deg);
+  font-size: 1rem;
+}
+
+/* Icônes */
+.nav-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.small-icon {
+  font-size: 2rem;
+  margin-top: 15px;
+  opacity: 0.7;
+}
+
+/* 🎴 Couleurs enseignes */
+.club {
+  background: linear-gradient(135deg, #166534, #052e16);
+  color: white;
+}
+
+.spade {
+  background: linear-gradient(135deg, #020617, #1e293b);
+  color: white;
+}
+
+.diamond {
+  background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+  color: white;
+}
+
+.heart {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  color: white;
+}
+
+/* 👑 ROYAL SPECIAL */
+.royal {
+  background: linear-gradient(135deg, #facc15, #92400e);
+  color: #111;
+  box-shadow:
+    0 0 25px rgba(250, 204, 21, 0.8),
+    0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.royal:hover {
+  box-shadow:
+    0 0 40px rgba(250, 204, 21, 1),
+    0 40px 80px rgba(0, 0, 0, 0.7);
+}
+
+/* Animation distribution */
+@keyframes deal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
