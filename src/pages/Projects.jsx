@@ -3,28 +3,37 @@ import { motion } from "framer-motion";
 import "./Projects.css";
 import { Link } from "react-router-dom";
 
-
 export default function Projects() {
   const [projects, setProjects] = useState([]);
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
-    fetch("http://localhost:3021/api/projects")
-      .then((res) => res.json())
+    fetch(`${API_URL}/api/projects`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch projects");
+        }
+        return res.json();
+      })
       .then((data) => setProjects(data))
-      .catch((err) => console.error("Error loading projects:", err));
-  }, []);
+      .catch((err) =>
+        console.error("Error loading projects:", err)
+      );
+  }, [API_URL]);
 
   return (
     <div className="projects-page">
       <h1 className="projects-title">🎴 Projects Deck</h1>
+
       <div className="scroll-indicator">
         <span>Scroll down</span>
         <div className="arrow"></div>
       </div>
+
       <Link to="/" className="back-home-floating">
         ← Home
       </Link>
-
 
       <div className="projects-column">
         {projects.map((project, index) => (
@@ -44,23 +53,18 @@ export default function Projects() {
               rotateY: -2,
             }}
           >
-            {/* ===== HEADER ===== */}
             <header className="project-header">
               <h2>{project.title}</h2>
             </header>
 
-            {/* ===== IMAGE ===== */}
             <div className="project-image">
               <img
                 src={project.image}
                 alt={project.title}
                 className="project-image"
               />
-
-
             </div>
 
-            {/* ===== BODY ===== */}
             <div className="project-body">
               <p className="project-description">
                 {project.description}
