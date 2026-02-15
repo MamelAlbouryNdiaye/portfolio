@@ -84,5 +84,8 @@ export default function Projects() {
         ))}
       </div>
     </div>
+    
+
   );
+  console.log("API URL:", API_URL);
 }
