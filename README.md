@@ -54,16 +54,7 @@ The goal of this project was to:
 
 ---
 
-## What I Learned
-
-- Deploying full-stack applications
-- Connecting MongoDB Atlas in production
-- Managing environment variables securely
-- Debugging production errors (CORS, ECONNREFUSED, 404)
-- Structuring scalable REST APIs
-
 ---
-
 ## Project Structure
 
 frontend/
