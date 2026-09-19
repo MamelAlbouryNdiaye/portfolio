@@ -20,6 +20,22 @@ const projects = [
     github: "https://github.com/MamelAlbouryNdiaye/macky-sall-reference",
   },
   {
+    id: "enterprise-network-simulation",
+    title: "Enterprise Network Simulation",
+    description:
+      "A small enterprise network designed and simulated in Cisco Packet Tracer. The topology connects four department-based LANs through three Cisco 2911 routers using static routing, with end-to-end connectivity verified through ICMP ping tests.",
+    stack: [
+      "Cisco Packet Tracer",
+      "Cisco 2911 Routers",
+      "IP Addressing",
+      "Subnetting",
+      "Static Routing",
+      "LAN Segmentation",
+      "ICMP / Ping",
+    ],
+    image: "/enterprise-network-topology.png",
+  },
+  {
     id: "jucicom",
     title: "Jucicom",
     description: "A modern web project designed with a clear interface and an engaging user experience.",
