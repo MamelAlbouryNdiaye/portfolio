@@ -12,6 +12,18 @@
   margin-bottom: 60px;
 }
 
+.data-notice {
+  max-width: 560px;
+  margin: -35px auto 40px;
+  padding: 10px 16px;
+  border: 1px solid rgba(196, 181, 253, 0.35);
+  border-radius: 999px;
+  background: rgba(76, 29, 149, 0.22);
+  color: #ddd6fe;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 .deck {
   display: flex;
   gap: 40px;

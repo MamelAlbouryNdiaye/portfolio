@@ -2,29 +2,48 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./Projects.css";
 import { Link } from "react-router-dom";
+import fallbackProjects from "../data/projects.js";
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(fallbackProjects);
+  const [isUsingFallback, setIsUsingFallback] = useState(true);
 
   const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch(`${API_URL}/api/projects`)
+    if (!API_URL) return;
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 8000);
+
+    fetch(`${API_URL}/api/projects`, { signal: controller.signal })
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch projects");
         }
         return res.json();
       })
-      .then((data) => setProjects(data))
-      .catch((err) =>
-        console.error("Error loading projects:", err)
-      );
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setProjects(data);
+          setIsUsingFallback(false);
+        }
+      })
+      .catch(() => setIsUsingFallback(true))
+      .finally(() => window.clearTimeout(timeout));
+
+    return () => {
+      window.clearTimeout(timeout);
+      controller.abort();
+    };
   }, [API_URL]);
 
   return (
     <div className="projects-page">
       <h1 className="projects-title">🎴 Projects Deck</h1>
+      {isUsingFallback && (
+        <p className="data-notice">Portfolio data is temporarily shown from the local version.</p>
+      )}
 
       <div className="scroll-indicator">
         <span>Scroll down</span>
@@ -39,7 +58,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.article
             className="project-card"
-            key={project._id}
+            key={project._id || project.id || project.title}
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -70,9 +89,9 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              {project.tech?.length > 0 && (
+              {(project.tech || project.stack)?.length > 0 && (
                 <div className="project-tech">
-                  {project.tech.map((tech, i) => (
+                  {(project.tech || project.stack).map((tech, i) => (
                     <span key={i} className="tech-badge">
                       {tech}
                     </span>
@@ -87,5 +106,4 @@ export default function Projects() {
     
 
   );
-  console.log("API URL:", API_URL);
 }
