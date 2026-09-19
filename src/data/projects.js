@@ -15,7 +15,7 @@ const projects = [
       "Zod",
       "Vercel",
     ],
-    image: "/profile.jpg",
+    image: "/macky-sall-reference.png",
     live: "https://macky-sall-reference.vercel.app/#/",
     github: "https://github.com/MamelAlbouryNdiaye/macky-sall-reference",
   },
