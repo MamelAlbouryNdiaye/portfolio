@@ -37,10 +37,21 @@ const projects = [
   },
   {
     id: "jucicom",
-    title: "Jucicom",
-    description: "A modern web project designed with a clear interface and an engaging user experience.",
-    stack: ["React", "JavaScript", "CSS"],
-    image: "/jucicom.png",
+    title: "JUCICOM — Judicial Digital Transformation",
+    description:
+      "Contributed to the modernization of the Senegalese Judicial Training Center's information systems. The project focused on digitalizing training management, administrative processes, and data workflows through web platforms tailored to public-sector operational needs.",
+    stack: [
+      "Symfony",
+      "PHP",
+      "Web Architecture",
+      "Requirements Analysis",
+      "ArchiMate",
+      "Functional Specifications",
+      "Agile Methodology",
+      "Public-Sector Digitalization",
+    ],
+    image:
+      "https://media.licdn.com/dms/image/v2/D5622AQEp3h6c3-9syQ/feedshare-shrink_800/B56Zrfpwi_K4Ag-/0/1764688860393?e=2147483647&t=Gitzlb3WeJ3f2PUAImooHOZ8PdInEdpKxoLRZ5hDFXk&v=beta",
   },
   {
     id: "cloud-deploy",
