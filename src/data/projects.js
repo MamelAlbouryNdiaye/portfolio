@@ -3,7 +3,7 @@ const projects = [
     id: "macky-sall-reference",
     title: "Macky Sall — Référence",
     description:
-      "Une application web documentaire en français consacrée au parcours de Macky Sall. Elle réunit sa biographie, sa chronologie politique, ses réalisations, ses projets, son action internationale et des sources vérifiables. Une recherche permet d’explorer le corpus par mot-clé et par catégorie.",
+      "A French-language documentary web application dedicated to Macky Sall's career. It brings together his biography, political timeline, achievements, projects, international action, and verifiable sources. A search feature lets visitors explore the corpus by keyword and category.",
     stack: [
       "React",
       "TypeScript",
