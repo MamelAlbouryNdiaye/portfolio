@@ -89,6 +89,37 @@
   margin-top: 20px;
 }
 
+/* Keep skill names readable against every card background. */
+.skills-page .card-front,
+.skills-page .card-back {
+  box-sizing: border-box;
+  padding: 24px;
+  color: #f8fafc;
+  text-align: center;
+}
+
+.skills-page .card-front h2 {
+  max-width: 100%;
+  margin: 20px 0 0;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+.skills-page .card-back p {
+  margin: 0 0 10px;
+  color: #ede9fe;
+  font-size: 1rem;
+}
+
+.skills-page .card-back strong {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
 .icon {
   font-size: 4rem;
   transition: transform 0.3s;
