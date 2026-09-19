@@ -4,9 +4,13 @@ const skills = [
   { title: "Node.js", level: "Advanced", icon: "🟢" },
   { title: "Express", level: "Intermediate", icon: "🚂" },
   { title: "MongoDB", level: "Intermediate", icon: "🍃" },
+  { title: "SQL & Databases", level: "Intermediate", icon: "🗄️" },
   { title: "HTML & CSS", level: "Advanced", icon: "🎨" },
   { title: "Git & GitHub", level: "Intermediate", icon: "🔧" },
   { title: "Vercel & Render", level: "Intermediate", icon: "☁️" },
+  { title: "Artificial Intelligence", level: "Intermediate", icon: "🤖" },
+  { title: "Computer Networking", level: "Intermediate", icon: "🌐" },
+  { title: "Cybersecurity Fundamentals", level: "Intermediate", icon: "🔒" },
 ];
 
 export default skills;
