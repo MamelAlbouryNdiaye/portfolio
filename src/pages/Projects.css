@@ -108,6 +108,29 @@
   border: 1px solid rgba(202, 162, 77, 0.35);
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.project-links a {
+  padding: 9px 14px;
+  border: 1px solid rgba(202, 162, 77, 0.55);
+  border-radius: 999px;
+  color: #f3d78d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.project-links a:hover {
+  background: #caa24d;
+  color: #0b0b12;
+}
+
 .project-card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow:

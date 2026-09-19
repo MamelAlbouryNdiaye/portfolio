@@ -1,10 +1,23 @@
 const projects = [
   {
-    id: "smartport",
-    title: "SmartPort",
-    description: "A web application focused on streamlining port-related workflows and operations.",
-    stack: ["React", "Node.js", "Express", "MongoDB"],
-    image: "/smartport.png",
+    id: "macky-sall-reference",
+    title: "Macky Sall — Référence",
+    description:
+      "Une application web documentaire en français consacrée au parcours de Macky Sall. Elle réunit sa biographie, sa chronologie politique, ses réalisations, ses projets, son action internationale et des sources vérifiables. Une recherche permet d’explorer le corpus par mot-clé et par catégorie.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "TanStack Query",
+      "Express",
+      "Zod",
+      "Vercel",
+    ],
+    image: "/profile.jpg",
+    live: "https://macky-sall-reference.vercel.app/#/",
+    github: "https://github.com/MamelAlbouryNdiaye/macky-sall-reference",
   },
   {
     id: "jucicom",

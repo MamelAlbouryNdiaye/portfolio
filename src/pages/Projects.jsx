@@ -98,6 +98,21 @@ export default function Projects() {
                   ))}
                 </div>
               )}
+
+              {(project.live || project.github) && (
+                <div className="project-links">
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer">
+                      Voir le site ↗
+                    </a>
+                  )}
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      Code GitHub ↗
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </motion.article>
         ))}
