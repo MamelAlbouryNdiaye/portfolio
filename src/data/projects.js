@@ -1,5 +1,28 @@
 const projects = [
   {
+    id: "caseflow-ai",
+    title: "CaseFlow AI — Intelligent Case Management",
+    description:
+      "Application full-stack de gestion de dossiers pour les équipes traitant des processus complexes. La plateforme centralise les dossiers, documents, tâches et échéances, avec recherche, authentification JWT, contrôles d’accès par rôle et journal d’audit. L’assistant IA prototype produit des synthèses traçables, soumises à une validation humaine.",
+    stack: [
+      "React",
+      "Vite",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "JWT",
+      "RBAC",
+      "Vercel",
+    ],
+    image: "/caseflow-ai-cases.png",
+    screenshots: [
+      "/caseflow-ai-cases.png",
+      "/caseflow-ai-documents.png",
+      "/caseflow-ai-login.png",
+    ],
+    live: "https://caseflow-ai-nine.vercel.app/",
+  },
+  {
     id: "macky-sall-reference",
     title: "Macky Sall — Référence",
     description:

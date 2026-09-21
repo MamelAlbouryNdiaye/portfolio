@@ -108,6 +108,29 @@
   border: 1px solid rgba(202, 162, 77, 0.35);
 }
 
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 18px;
+  background: #10101c;
+}
+
+.project-gallery-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+  border: 1px solid rgba(202, 162, 77, 0.22);
+  border-radius: 10px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-gallery-image:hover {
+  transform: scale(1.03);
+  border-color: rgba(202, 162, 77, 0.7);
+}
+
 .project-links {
   display: flex;
   flex-wrap: wrap;
@@ -167,6 +190,24 @@
 @keyframes fadeIn {
   from { opacity: 0.4; }
   to { opacity: 0.8; }
+}
+
+@media (max-width: 640px) {
+  .projects-page {
+    padding: 70px 16px 40px;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-image {
+    width: 100%;
+  }
 }
 
 .back-home-floating {

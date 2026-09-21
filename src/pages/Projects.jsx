@@ -25,7 +25,14 @@ export default function Projects() {
       })
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
-          setProjects(data);
+          const localOnlyProjects = fallbackProjects.filter(
+            (localProject) =>
+              !data.some(
+                (apiProject) =>
+                  (apiProject.id || apiProject._id) === localProject.id,
+              ),
+          );
+          setProjects([...localOnlyProjects, ...data]);
           setIsUsingFallback(false);
         }
       })
@@ -76,13 +83,28 @@ export default function Projects() {
               <h2>{project.title}</h2>
             </header>
 
-            <div className="project-image">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="project-image"
-              />
-            </div>
+            {project.screenshots?.length ? (
+              <div className="project-gallery" aria-label={`Aperçus de ${project.title}`}>
+                {project.screenshots.map((screenshot, screenshotIndex) => (
+                  <img
+                    key={screenshot}
+                    src={screenshot}
+                    alt={`${project.title} — aperçu ${screenshotIndex + 1}`}
+                    className="project-gallery-image"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="project-image">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="project-image"
+                  loading="lazy"
+                />
+              </div>
+            )}
 
             <div className="project-body">
               <p className="project-description">
