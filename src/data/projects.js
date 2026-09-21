@@ -3,7 +3,7 @@ const projects = [
     id: "caseflow-ai",
     title: "CaseFlow AI — Intelligent Case Management",
     description:
-      "Application full-stack de gestion de dossiers pour les équipes traitant des processus complexes. La plateforme centralise les dossiers, documents, tâches et échéances, avec recherche, authentification JWT, contrôles d’accès par rôle et journal d’audit. L’assistant IA prototype produit des synthèses traçables, soumises à une validation humaine.",
+      "A full-stack case management application for teams handling complex workflows. The platform centralizes cases, documents, tasks, and deadlines, with search, JWT authentication, role-based access control, and audit logging. Its AI assistant prototype produces traceable summaries that remain subject to human review.",
     stack: [
       "React",
       "Vite",
