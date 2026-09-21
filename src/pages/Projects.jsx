@@ -125,7 +125,7 @@ export default function Projects() {
                 <div className="project-links">
                   {project.live && (
                     <a href={project.live} target="_blank" rel="noreferrer">
-                      Voir le site ↗
+                      View live site ↗
                     </a>
                   )}
                   {project.github && (
